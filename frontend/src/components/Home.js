@@ -58,22 +58,6 @@ const Home = ({ match }) => {
       const callback = (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-            window.dataLayer.push({
-              event: "promotionImpression",
-              ecommerce: {
-                promoView: {
-                  promotions: [
-                    {
-                      id: "123456789", // Name or ID is required.
-                      name: "Tyre Banner",
-                      creative: "AutoShop Creation",
-                      position: "Homepage Top",
-                    },
-                  ],
-                },
-              },
-            });
 
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
@@ -114,22 +98,6 @@ const Home = ({ match }) => {
       const callback1 = (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-            window.dataLayer.push({
-              event: "promotionImpression",
-              ecommerce: {
-                promoView: {
-                  promotions: [
-                    {
-                      id: "987654321", // Name or ID is required.
-                      name: "Battery Banner",
-                      creative: "AutoShop Creation",
-                      position: "Homepage center",
-                    },
-                  ],
-                },
-              },
-            });
 
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
@@ -178,27 +146,7 @@ const Home = ({ match }) => {
             for (var i = 0; i < item.length; i++) {
               product.push(item[i]);
             }
-            const values = product.map(
-              ({ name, _id, price, brand, category, variant, position }) => ({
-                name,
-                id: _id,
-                price,
-                brand,
-                category,
-                variant,
-                position,
-              })
-            );
-
-            window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-            window.dataLayer.push({
-              event: "productsImpression",
-              ecommerce: {
-                currencyCode: "EUR", // Local currency is optional.
-                impressions: values,
-              },
-            });
-
+            
             const values2 = product.map(
               ({
                 _id,

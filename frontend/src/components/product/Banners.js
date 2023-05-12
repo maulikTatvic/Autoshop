@@ -1,46 +1,6 @@
 import React, { Fragment } from "react";
 
 const bannerClickHandler = () => {
-  window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-  window.dataLayer.push({
-    event: "promotionClick",
-    ecommerce: {
-      promoClick: {
-        promotions: [
-          {
-            id: "123456789", // Name or ID is required.
-            name: "Tyre Banner",
-            creative: "AutoShop Creation",
-            position: "Homepage Top",
-          },
-        ],
-      },
-    },
-    eventCallback: function () {
-      document.location =
-        "http://localhost:3000/product/645e0c8917a074d67ef78cd2";
-    },
-  });
-
-  window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-  window.dataLayer.push({
-    event: "select_promotion",
-    ecommerce: {
-      creative_name: "AutoShop Creation",
-      creative_slot: "Homepage Top",
-      promotion_id: "123456789",
-      promotion_name: "Tyre Banner",
-      items: [
-        {
-          item_id: "	644ba45ea2cebd0fd131e083",
-          item_name: "JK TYRE Taximax 4 Wheeler Tyre (185/65 R15, Tube Less)",
-          affiliation: "Auto Shop Store",
-          item_category: "Tyre",
-          price: 650,
-        },
-      ],
-    },
-  });
 
   window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
   window.dataLayer.push({
@@ -70,26 +30,6 @@ const bannerClickHandler = () => {
 };
 
 const banner2ClickHandler = () => {
-  window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-  window.dataLayer.push({
-    event: "promotionClick",
-    ecommerce: {
-      promoClick: {
-        promotions: [
-          {
-            id: "987654321", // Name or ID is required.
-            name: "Battery Banner",
-            creative: "AutoShop Creation",
-            position: "Homepage center",
-          },
-        ],
-      },
-    },
-    eventCallback: function () {
-      document.location =
-        "http://localhost:3000/product/645e0c8917a074d67ef78cd4";
-    },
-  });
 
   window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
   window.dataLayer.push({

@@ -60,26 +60,6 @@ const Cart = ({ history }) => {
     const response = await fetch(`/api/v1/product/${id}`);
     const json = await response.json();
     var item = json.product;
-    console.log(item);
-    window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-    window.dataLayer.push({
-      event: "removeFromCart",
-      ecommerce: {
-        remove: {
-          products: [
-            {
-              name: `${item.name}`,
-              id: `${item._id}`,
-              price: `${item.price}`,
-              brand: `${item.brand}`,
-              category: `${item.category}`,
-              variant: `${item.variant}`,
-              quantity: `${quantity}`,
-            },
-          ],
-        },
-      },
-    });
 
     window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
     window.dataLayer.push({
@@ -130,29 +110,6 @@ const Cart = ({ history }) => {
         items.push(cartItems[i]);
       }
 
-      const values = items.map(
-        ({ name, product, price, brand, category, variant, quantity }) => ({
-          name,
-          id: product,
-          price,
-          brand,
-          category,
-          variant,
-          quantity,
-        })
-      );
-
-      window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-      window.dataLayer.push({
-        event: "checkout",
-        ecommerce: {
-          checkout: {
-            actionField: { step: 1, option: "Shipping" },
-            products: values,
-          },
-        },
-      });
-
       const values2 = items.map(
         ({
           product,
@@ -190,7 +147,7 @@ const Cart = ({ history }) => {
       });
 
       history.push("/login?");
-      document.location = "http://localhost:3000/shipping";
+      history.push("/shipping");
     }
   };
 

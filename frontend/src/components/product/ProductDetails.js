@@ -59,26 +59,7 @@ export const ProductDetails = ({ match }) => {
       if (!Array.isArray(window.dataLayer)) {
         window.dataLayer = [];
       }
-      if (!window.dataLayer.some((d) => d.event === "productDetails")) {
-        window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-        window.dataLayer.push({
-          event: "productDetails",
-          ecommerce: {
-            detail: {
-              products: [
-                {
-                  name: `${item.name}`, // Name or ID is required.
-                  id: `${item._id}`,
-                  price: `${item.price}`,
-                  brand: `${item.brand}`,
-                  category: `${item.category}`,
-                  variant: `${item.variant}`,
-                },
-              ],
-            },
-          },
-        });
-      }
+     
       if (!window.dataLayer.some((d) => d.event === "view_item")) {
         window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
         window.dataLayer.push({
@@ -127,29 +108,6 @@ export const ProductDetails = ({ match }) => {
   const addToCart = () => {
     dispatch(addItemToCart(match.params.id, quantity));
     alert.success("Item Added to Cart");
-
-    window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-    window.dataLayer.push({
-      event: "addToCart",
-      ecommerce: {
-        currencyCode: "EUR",
-        add: {
-          // 'add' actionFieldObject measures.
-          products: [
-            {
-              //  adding a product to a shopping cart.
-              name: `${product.name}`,
-              id: `${product._id}`,
-              price: `${product.price}`,
-              brand: `${product.brand}`,
-              category: `${product.category}`,
-              variant: `${product.variant}`,
-              quantity: `${quantity}`,
-            },
-          ],
-        },
-      },
-    });
 
     window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
     window.dataLayer.push({

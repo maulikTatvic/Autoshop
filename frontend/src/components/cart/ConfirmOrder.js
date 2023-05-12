@@ -31,29 +31,6 @@ const ConfirmOrder = ({ history }) => {
         items.push(cartItems[i]);
       }
 
-      const values = items.map(
-        ({ name, product, price, brand, category, variant, quantity }) => ({
-          name,
-          id: product,
-          price,
-          brand,
-          category,
-          variant,
-          quantity,
-        })
-      );
-
-      window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-      window.dataLayer.push({
-        event: "checkoutOption",
-        ecommerce: {
-          checkout: {
-            actionField: { step: 3, option: "Payment info" },
-            products: values,
-          },
-        },
-      });
-
       const values2 = items.map(
         ({
           product,
@@ -93,7 +70,7 @@ const ConfirmOrder = ({ history }) => {
         },
       });
     }
-    document.location = "http://localhost:3000/payment";
+    history.push("/payment");
   };
 
   return (
