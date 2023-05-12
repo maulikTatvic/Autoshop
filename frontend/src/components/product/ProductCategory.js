@@ -110,11 +110,11 @@ const ProductCategory = () => {
 
   const handleBattery = () => {
     document.cookie = "keyword=Battery";
-    document.location = "http://localhost:3000/category";
+    document.location = "https://645e256ef532d60678f17e54--roaring-tulumba-34612a.netlify.app/category";
   };
   const handleTyre = () => {
     document.cookie = "keyword=Tyres";
-    document.location = "http://localhost:3000/category";
+    document.location = "https://645e256ef532d60678f17e54--roaring-tulumba-34612a.netlify.app/category";
   };
   const handleSteering = () => {
     document.cookie = "keyword=Steering%20Wheels";
