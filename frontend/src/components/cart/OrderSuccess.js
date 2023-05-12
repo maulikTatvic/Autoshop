@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect } from "react";
 import MetaData from "../layout/MetaData";
 import { useSelector } from "react-redux";
 
@@ -87,7 +87,7 @@ const OrderSuccess = () => {
         });
       
     
-  }, []);
+  }, [cartItems]);
 
   return (
     <Fragment>

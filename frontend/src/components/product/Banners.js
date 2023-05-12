@@ -18,7 +18,7 @@ const bannerClickHandler = () => {
     },
     eventCallback: function () {
       document.location =
-        "http://localhost:3000/product/645b6a34fd62a516c66c547e";
+        "http://localhost:3000/product/645e0c8917a074d67ef78cd2";
     },
   });
 
@@ -87,7 +87,7 @@ const banner2ClickHandler = () => {
     },
     eventCallback: function () {
       document.location =
-        "http://localhost:3000/product/645b6a34fd62a516c66c5480";
+        "http://localhost:3000/product/645e0c8917a074d67ef78cd4";
     },
   });
 
@@ -127,7 +127,7 @@ const Banners = () => {
             <img
               src="https://firebasestorage.googleapis.com/v0/b/image-6fe04.appspot.com/o/banner-car-tyres-empty-space-text-banner-car-tyres-empty-space-text-modern-167277902%20(2).jpg?alt=media&token=1fb84d0f-29c1-4a5d-97a2-fe5a93abec5e"
               className="img-fluid "
-              alt="Responsive image"
+              alt=" "
               onClick={bannerClickHandler}
             />
 
@@ -135,7 +135,7 @@ const Banners = () => {
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/image-6fe04.appspot.com/o/buy_1_get_1_free-transformed%20(1).png?alt=media&token=bf2097e7-6c18-4c51-bc32-232244f018be"
                 className="img-fluid "
-                alt="Responsive image"
+                alt=" "
               />
             </div>
           </div>
@@ -143,7 +143,7 @@ const Banners = () => {
             <img
               src="https://firebasestorage.googleapis.com/v0/b/image-6fe04.appspot.com/o/battry.webp?alt=media&token=d17ae9f2-0198-43ff-9c85-f3f4756f9d25"
               className="img-fluid"
-              alt="Responsive image"
+              alt=""
               onClick={banner2ClickHandler}
             />
           </div>

@@ -178,8 +178,6 @@ const Home = ({ match }) => {
             for (var i = 0; i < item.length; i++) {
               product.push(item[i]);
             }
-            console.log(product);
-            var i = 0;
             const values = product.map(
               ({ name, _id, price, brand, category, variant, position }) => ({
                 name,

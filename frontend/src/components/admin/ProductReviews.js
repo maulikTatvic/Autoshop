@@ -2,7 +2,6 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { MDBDataTable } from 'mdbreact'
 
 import MetaData from '../layout/MetaData'
-import Loader from '../layout/Loader'
 import Sidebar from './Sidebar'
 
 import { useAlert } from 'react-alert'
@@ -43,7 +42,7 @@ const ProductReviews = () => {
 
 
 
-    }, [dispatch, alert, error, productId, isDeleted])
+    }, [dispatch, alert, error, productId, isDeleted,deleteError])
 
     const deleteReviewHandler = (id) => {
         dispatch(deleteReview(id, productId))

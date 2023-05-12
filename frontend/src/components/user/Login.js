@@ -1,6 +1,4 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -33,7 +31,7 @@ export const Login = ({ history, location }) => {
             dispatch(clearErrors());
          }
 
-    }, [dispatch, alert, isAuthenticated, error, history])
+    }, [dispatch, alert, isAuthenticated, error, history,redirect])
 
     const submitHandler = (e) => {
         e.preventDefault();

@@ -106,7 +106,7 @@ const ProductCategory = () => {
       const target2 = document.querySelector(".rounded");
       observer2.observe(target2);
     });
-  }, []);
+  }, [cat_keyword]);
 
   const handleBattery = () => {
     document.cookie = "keyword=Battery";

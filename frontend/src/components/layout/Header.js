@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
@@ -27,7 +27,7 @@ const Header = () => {
                 <div className="col-12 col-md-3">
                     <div className="navbar-brand mx-3">
                         <a href="/">
-                            <img src="./Images/logo.png" />
+                            <img src="./Images/logo.png" alt=''/>
                         </a>
                     </div>
                 </div>
@@ -44,8 +44,8 @@ const Header = () => {
 
                     {user ? (
                         <div className="ml-4 dropdown d-inline">
-                            <a href="#!" className="btn dropdown-toggle text-white mr-4"
-                             type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href='!#' className="btn dropdown-toggle text-white mr-4"
+                             type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-expanded="false">
 
                                 <figure className="avatar avatar-nav">
                                     <img

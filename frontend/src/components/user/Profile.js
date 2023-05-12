@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 import Loader from '../layout/Loader'
@@ -42,9 +41,6 @@ const Profile = () => {
                                 </a>
                             )}
 
-                            <a className="btn btn-primary btn-block mt-3">
-                                Change Password
-                            </a>
                         </div>
                     </div>
                 </Fragment>

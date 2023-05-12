@@ -54,7 +54,7 @@ const Cart = ({ history }) => {
         },
       });
     }
-  }, []);
+  }, [cartItems]);
 
   const removeCartItemHandler = async (id, quantity) => {
     const response = await fetch(`/api/v1/product/${id}`);

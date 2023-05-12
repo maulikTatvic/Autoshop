@@ -32,75 +32,78 @@ export const ProductDetails = ({ match }) => {
     (state) => state.newReview
   );
 
-  useEffect(async () => {
-    dispatch(getProductDetails(match.params.id));
+  useEffect(() => {
+    async function fetchData() {
+      dispatch(getProductDetails(match.params.id));
 
-    if (error) {
-      alert.error(error);
-      dispatch(clearErrors());
-    }
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
 
-    if (reviewError) {
-      alert.error(reviewError);
-      dispatch(clearErrors());
-    }
+      if (reviewError) {
+        alert.error(reviewError);
+        dispatch(clearErrors());
+      }
 
-    if (success) {
-      alert.success("Reivew posted successfully");
-      dispatch({ type: NEW_REVIEW_RESET });
-    }
+      if (success) {
+        alert.success("Reivew posted successfully");
+        dispatch({ type: NEW_REVIEW_RESET });
+      }
 
-    const response = await fetch(`/api/v1/product/${match.params.id}`);
-    const json = await response.json();
-    var item = json.product;
-    console.log(item);
+      const response = await fetch(`/api/v1/product/${match.params.id}`);
+      const json = await response.json();
+      var item = json.product;
+      console.log(item);
 
-    if (!Array.isArray(window.dataLayer)) {
-      window.dataLayer = [];
-    }
-    if (!window.dataLayer.some((d) => d.event === "productDetails")) {
-      window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-      window.dataLayer.push({
-        event: "productDetails",
-        ecommerce: {
-          detail: {
-            products: [
+      if (!Array.isArray(window.dataLayer)) {
+        window.dataLayer = [];
+      }
+      if (!window.dataLayer.some((d) => d.event === "productDetails")) {
+        window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
+        window.dataLayer.push({
+          event: "productDetails",
+          ecommerce: {
+            detail: {
+              products: [
+                {
+                  name: `${item.name}`, // Name or ID is required.
+                  id: `${item._id}`,
+                  price: `${item.price}`,
+                  brand: `${item.brand}`,
+                  category: `${item.category}`,
+                  variant: `${item.variant}`,
+                },
+              ],
+            },
+          },
+        });
+      }
+      if (!window.dataLayer.some((d) => d.event === "view_item")) {
+        window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
+        window.dataLayer.push({
+          event: "view_item",
+          ecommerce: {
+            currency: "INR",
+            items: [
               {
-                name: `${item.name}`, // Name or ID is required.
-                id: `${item._id}`,
+                item_id: `${item._id}`,
+                item_name: `${item.name}`,
+                affiliation: "AutoShop Store",
+                index: `${item.position}`,
+                item_brand: `${item.brand}`,
+                item_category: `${item.category}`,
+                item_category2: `${item.category2}`,
+                item_category3: `${item.category3}`,
+                item_variant: `${item.variant}`,
                 price: `${item.price}`,
-                brand: `${item.brand}`,
-                category: `${item.category}`,
-                variant: `${item.variant}`,
               },
             ],
           },
-        },
-      });
+        });
+      }
     }
-    if (!window.dataLayer.some((d) => d.event === "view_item")) {
-      window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-      window.dataLayer.push({
-        event: "view_item",
-        ecommerce: {
-          currency: "INR",
-          items: [
-            {
-              item_id: `${item._id}`,
-              item_name: `${item.name}`,
-              affiliation: "AutoShop Store",
-              index: `${item.position}`,
-              item_brand: `${item.brand}`,
-              item_category: `${item.category}`,
-              item_category2: `${item.category2}`,
-              item_category3: `${item.category3}`,
-              item_variant: `${item.variant}`,
-              price: `${item.price}`,
-            },
-          ],
-        },
-      });
-    }
+    fetchData();
   }, [dispatch, alert, error, reviewError, match.params.id, success]);
 
   const increaseQty = () => {

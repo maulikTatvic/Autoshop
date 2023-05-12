@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Product = ({ product, col }) => {
   const productClickHandler = () => {
@@ -52,10 +51,10 @@ const Product = ({ product, col }) => {
   return (
     <div className={`col-sm-12 col-md-6 col-lg-${col} my-3`}>
       <div className="card p-3 rounded">
-        <img className="card-img-top mx-auto" src={product.images[0].url} />
+        <img className="card-img-top mx-auto" src={product.images[0].url} alt=""/>
         <div className="card-body d-flex flex-column">
           <h5 className="card-title">
-            <a onClick={productClickHandler}>{product.name}</a>
+            <p onClick={productClickHandler}>{product.name}</p>
           </h5>
           <div className="ratings mt-auto">
             <div className="rating-outer">
