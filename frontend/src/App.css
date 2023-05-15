@@ -645,3 +645,10 @@ ul.CTAs a {
 .product_category .card-img-top{
   width: 100%;
 }
+.addToWhishlist{
+  border-radius: 2rem;
+  background-color: #fa9c23;
+  border: none;
+  padding: 0.5rem 2rem;
+  margin-left: 5px;
+}
