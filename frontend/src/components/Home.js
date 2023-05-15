@@ -58,7 +58,7 @@ const Home = ({ match }) => {
       const callback = (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-
+            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
               event: "view_promotion",
@@ -97,7 +97,7 @@ const Home = ({ match }) => {
       const callback1 = (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-
+            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
               event: "view_promotion",
@@ -170,7 +170,7 @@ const Home = ({ match }) => {
               })
             );
             console.log(values2);
-
+            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
               event: "view_item_list",

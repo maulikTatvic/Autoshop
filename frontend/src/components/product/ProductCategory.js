@@ -53,7 +53,7 @@ const ProductCategory = () => {
                 position,
               })
             );
-
+            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
               event: "productsImpression",
@@ -87,7 +87,7 @@ const ProductCategory = () => {
                 price,
               })
             );
-
+            window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
             window.dataLayer.push({
               event: "view_item_list",

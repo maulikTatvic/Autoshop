@@ -39,7 +39,7 @@ const OrderSuccess = () => {
         quantity,
       })
     );
-
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
     window.dataLayer.push({
       event: "purchase",

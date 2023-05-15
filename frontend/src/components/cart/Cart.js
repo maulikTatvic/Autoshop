@@ -44,7 +44,8 @@ const Cart = ({ history }) => {
       if (!Array.isArray(window.dataLayer)) {
         window.dataLayer = [];
       }
-
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
       window.dataLayer.push({
         event: "view_cart",
@@ -62,6 +63,7 @@ const Cart = ({ history }) => {
     var item = json.product;
     console.log(item)
     console.log(json)
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
     window.dataLayer.push({
       event: "remove_from_cart",
@@ -138,6 +140,7 @@ const Cart = ({ history }) => {
         })
       );
 
+      window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
       window.dataLayer.push({
         event: "begin_checkout",

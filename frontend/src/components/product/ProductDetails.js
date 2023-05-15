@@ -59,8 +59,9 @@ export const ProductDetails = ({ match }) => {
       if (!Array.isArray(window.dataLayer)) {
         window.dataLayer = [];
       }
-     
+      window.dataLayer = window.dataLayer || [];
       if (!window.dataLayer.some((d) => d.event === "view_item")) {
+        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
         window.dataLayer.push({
           event: "view_item",
@@ -108,7 +109,7 @@ export const ProductDetails = ({ match }) => {
   const addToCart = () => {
     dispatch(addItemToCart(match.params.id, quantity));
     alert.success("Item Added to Cart");
-
+    window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
     window.dataLayer.push({
       event: "add_to_cart",
