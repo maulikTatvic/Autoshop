@@ -73,7 +73,6 @@ const Home = ({ match }) => {
                     item_name:
                       "Goodyear TYRE Taximax 4 Wheeler Tyre (185/65 R15, Tube Less)",
                     affiliation: "Autoshop store",
-                    index: 2,
                     item_brand: "Goodyear",
                     item_category: "Tyres",
                     item_category2: "Motorcycle tyres",
@@ -112,7 +111,6 @@ const Home = ({ match }) => {
                     item_id: "	645b6a34fd62a516c66c5480",
                     item_name: "EXIDE XP 880 Battery for Vehicle (Red)",
                     affiliation: "Autoshop store",
-                    index: 4,
                     item_brand: "Exide",
                     item_category: "Battery",
                     item_category2: "Motorcycle batteries",

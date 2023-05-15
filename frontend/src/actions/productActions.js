@@ -38,8 +38,10 @@ export const getProducts = (keyword = '', currentPage = 1, price, category, rati
 
         
         
-        let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`
-
+        let link = `/api/v1/products?page=${currentPage}`
+        if(keyword){
+            link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`
+        }
         if (category) {
             link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&category=${category}&ratings[gte]=${rating}`
         }

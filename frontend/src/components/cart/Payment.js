@@ -112,43 +112,7 @@ const Payment = ({ history }) => {
 
           document.cookie = "value = true; expires=" + expiryDate.toGMTString();
           localStorage.setItem("orderSucess", JSON.stringify(order));
-          if (cartItems.length > 0) {
-            var items = [];
-            for (var i = 0; i < cartItems.length; i++) {
-              items.push(cartItems[i]);
-            }
-
-            const values = items.map(
-              ({
-                name,
-                product,
-                price,
-                brand,
-                category,
-                variant,
-                quantity,
-              }) => ({
-                name,
-                id: product,
-                price,
-                brand,
-                category,
-                variant,
-                quantity,
-              })
-            );
-
-            window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-            window.dataLayer.push({
-              event: "checkoutOption",
-              ecommerce: {
-                checkout: {
-                  actionField: { step: 3, option: "Process to pay" },
-                  products: values,
-                },
-              },
-            });
-          }
+          
           document.location = "http://localhost:3000/success";
         } else {
           alert.error("There is some issue while payment processing");

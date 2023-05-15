@@ -60,7 +60,8 @@ const Cart = ({ history }) => {
     const response = await fetch(`/api/v1/product/${id}`);
     const json = await response.json();
     var item = json.product;
-
+    console.log(item)
+    console.log(json)
     window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
     window.dataLayer.push({
       event: "remove_from_cart",
@@ -69,7 +70,7 @@ const Cart = ({ history }) => {
         value: 7.77,
         items: [
           {
-            item_id: `${item._id}`,
+            item_id: `${item.id}`,
             item_name: `${item.name}`,
             affiliation: "Autoshop Store",
             index: `${item.position}`,
@@ -167,7 +168,7 @@ const Cart = ({ history }) => {
               {cartItems.map((item) => (
                 <Fragment key={item.product}>
                   <hr />
-
+                {console.log(item)}
                   <div className="cart-item" key={item.product}>
                     <div className="row">
                       <div className="col-4 col-lg-3">

@@ -13,80 +13,44 @@ const OrderSuccess = () => {
       items.push(cartItems[i]);
     }
 
-    const values = items.map(
-      ({ name, product, price, brand, category, variant, quantity }) => ({
+    const values2 = items.map(
+      ({
+        product,
         name,
-        id: product,
-        price,
+        position,
         brand,
         category,
+        category2,
+        category3,
         variant,
+        price,
+        quantity,
+      }) => ({
+        item_id: product,
+        item_name: name,
+        affiliation: "Autoshop store",
+        index: position,
+        item_brand: brand,
+        item_category: category,
+        item_category1: category2,
+        item_category2: category3,
+        item_variant: variant,
+        price,
         quantity,
       })
     );
 
-    console.log(values);
-
-    if (!Array.isArray(window.dataLayer)) {
-      window.dataLayer = [];
-    }
-
-      window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-      window.dataLayer.push({
-        event: "purchase_GA3",
-        ecommerce: {
-          purchase: {
-            actionField: {
-              id: `${paymentInfoObj.paymentInfo.id}`,
-              affiliation: "Online Store",
-              revenue: `${paymentInfoObj.totalPrice}`,
-              shipping: `${paymentInfoObj.shippingPrice}`,
-            },
-            products: values,
-          },
-        },
-      });
-
-      const values2 = items.map(
-        ({
-          product,
-          name,
-          position,
-          brand,
-          category,
-          category2,
-          category3,
-          variant,
-          price,
-          quantity,
-        }) => ({
-          item_id: product,
-          item_name: name,
-          affiliation: "Autoshop store",
-          index: position,
-          item_brand: brand,
-          item_category: category,
-          item_category1: category2,
-          item_category2: category3,
-          item_variant: variant,
-          price,
-          quantity,
-        })
-      );
-
-        window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-        window.dataLayer.push({
-          event: "purchase",
-          isUA:false,
-          ecommerce: {
-            transaction_id: `${paymentInfoObj.paymentInfo.id}`,
-            shipping:`${paymentInfoObj.shippingPrice}`,
-            currency: "INR",
-            items: values2
-          },
-        });
-      
-    
+    window.dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
+    window.dataLayer.push({
+      event: "purchase",
+      isUA: false,
+      ecommerce: {
+        transaction_id: `${paymentInfoObj.paymentInfo.id}`,
+        shipping: `${paymentInfoObj.shippingPrice}`,
+        currency: "INR",
+        items: values2,
+      },
+    });
   }, [cartItems]);
 
   return (

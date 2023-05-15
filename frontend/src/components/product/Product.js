@@ -25,7 +25,7 @@ const Product = ({ product, col }) => {
         ],
       },
     });
-    document.location = `https://645e256ef532d60678f17e54--roaring-tulumba-34612a.netlify.app/product/${product._id}`;
+    document.location = `http://localhost:3000/product/${product._id}`;
   };
   return (
     <div className={`col-sm-12 col-md-6 col-lg-${col} my-3`}>
